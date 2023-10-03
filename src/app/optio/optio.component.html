@@ -1,0 +1,15 @@
+<dx-tab-panel [dataSource]="tabColumnData">
+    <div *dxTemplate="let tabTitle of 'title'">
+        <span>{{tabTitle.tabName}}</span>
+    </div>
+    <div *dxTemplate="let item of 'item'">
+       
+        <dx-data-grid [dataSource]="tabDataSource">
+            <div>
+                <dxi-column [dataField]="item.columnName"></dxi-column>
+              <dx-select-box></dx-select-box>
+            </div>
+        </dx-data-grid>
+       
+    </div>
+</dx-tab-panel>

@@ -1,0 +1,17 @@
+<p>colum works!</p>
+
+<dx-radio-group
+    [dataSource]="dataSource"
+    value="ID"
+    [dataSource]="dataItems"
+    displayExpr="text">
+</dx-radio-group>
+
+<dx-data-grid
+  id="gridContainer"
+  [dataSource]="customers"
+  keyExpr="ID"
+  [columns]="['ID', 'Name', 'Username', 'Email', 'phone']"
+  [showBorders]="true"
+>
+</dx-data-grid>

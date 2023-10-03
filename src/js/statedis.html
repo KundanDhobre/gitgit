@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>District and State</title>
+
+    <style>
+        .container{
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            border: 2px solid black;
+            background-color: gray;
+            color: white;
+            width: 700px;
+            margin: 200px;
+            font-size: 25px;
+        }
+
+
+
+        /* .dist{
+            padding: 100px;
+        } */
+
+        /* body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 500px;
+                width: 400px;
+                border: 2px solid black;
+
+            } */
+
+            input{
+                height: 23px;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    
+        <label for="district"  >District:</label>
+        <input type="text" id="district" onkeyup="getRelatedState()" placeholder="Enter District" > &nbsp; &nbsp;
+    
+        <br>
+    
+        <label for="state" >State:</label>
+        <input type="text" id="state" placeholder="State will appear here" readonly>
+    </div>
+        
+        <script>
+            function getRelatedState() {
+                // Define a mapping of districts to states (you can expand this as needed)
+                const districtToState = {
+                    "hyderabad": "Tellangana",
+                    "mumbai": "Maharashtra",
+                    "bhuwaneshwar": "Odisa",
+                    "varanasi": "Uttar Pradesh",
+                    "guntur": "Andhra",
+                    "District3": "State3",
+                    "District4": "State4",
+                    "District5": "State5",
+                    "District6": "State6",
+                    // Add more districts and states here
+                };
+    
+                // Get the district input value
+                const districtInput = document.getElementById("district").value;
+    
+                // Check if the district is in the mapping
+                if (districtToState.hasOwnProperty(districtInput)) {
+                    // If it is, populate the state input with the corresponding state
+                    document.getElementById("state").value = districtToState[districtInput];
+                } else {
+                    // If not, clear the state input
+                    document.getElementById("state").value = "";
+                }
+            }
+        </script>
+    </body>
+    </html>
+    
+
+
+
+

@@ -1,0 +1,59 @@
+<p>radiofrm works!</p>
+
+<h3>Search</h3>
+
+<div style="display: flex; ">
+    
+   
+    
+  <dx-text-box width="200"> </dx-text-box>
+  <dx-button
+  text="Go"
+  width="100">
+</dx-button>
+  
+</div>
+<div>
+    
+
+
+      <div class="form">
+        <dx-radio-group
+        [items]="priorities"
+        [value]="priorities[0]"
+        layout="horizontal"
+      >
+      </dx-radio-group>
+      </div>
+      </div>
+      
+    
+<dx-data-grid
+  id="gridContainer"
+  [dataSource]="customers"
+  keyExpr="ID"
+  [columns]="['Registration No', 'Chassis Number', 'Vehicle Mode', 'Customer', 'Mobile Number','Reference Number', 'PAN Number']"
+  [showBorders]="true"
+>
+
+<dxi-item itemType="group" [colCount]="2" caption="Employee Details"></dxi-item>
+<dxo-search-panel
+[visible]="true"
+[highlightCaseSensitive]="true"
+></dxo-search-panel>
+</dx-data-grid>
+
+<dx-button
+text=" Cancel">
+</dx-button>
+
+<dx-button
+    text="Ok">
+</dx-button>
+
+
+
+
+
+
+

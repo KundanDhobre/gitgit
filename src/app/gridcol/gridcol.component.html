@@ -1,0 +1,59 @@
+<p>gridcol works!</p>
+
+<h3>Search </h3>
+<div style="display: flex; ">
+    
+   
+    
+    <dx-text-box width="200"> </dx-text-box>
+    <dx-button
+    text="Go"
+    width="100">
+</dx-button>
+    
+  </div>
+  <dx-radio-group
+          [items]="priorities"
+          [value]="priorities[0]"
+          layout="horizontal"
+        >
+        </dx-radio-group>
+
+<dx-data-grid
+  
+  [dataSource]="employees"
+
+  [showRowLines]="true"
+  [showBorders]="true"
+  [columnAutoWidth]="true"
+>
+
+
+
+
+<dxo-search-panel
+    [visible]="true"
+    [highlightCaseSensitive]="true"
+  ></dxo-search-panel>
+  <dxo-header-filter [visible]="true"></dxo-header-filter>
+
+  <dxi-column dataField="FirstName"></dxi-column>
+  <dxi-column dataField="LastName"></dxi-column>
+  <dxi-column dataField="Position">
+    <dxo-header-filter [allowSelectAll]="false">
+      <dxo-search [enabled]="true"></dxo-search>
+    </dxo-header-filter>
+  </dxi-column>
+  <dxi-column dataField="City">
+    <dxo-header-filter>
+      <dxo-search
+        [enabled]="true"
+        [searchExpr]="searchExpr"
+        [editorOptions]="editorOptions"
+      ></dxo-search>
+    </dxo-header-filter>
+  </dxi-column>
+  <dxi-column dataField="State"></dxi-column>
+  <dxi-column dataField="HomePhone"></dxi-column>
+  <dxi-column dataField="HireDate" dataType="date"></dxi-column>
+</dx-data-grid>

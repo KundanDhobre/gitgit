@@ -1,0 +1,43 @@
+<p>ifdemo works!</p>
+
+<h3>Showing ngif preview</h3>
+<div>
+<input type="checkbox" ngModel name="Preview" #Preview="ngModel">Preview
+</div>
+<div  *ngIf="Preview.value">
+    <img src="../../assets/th.jpg" width="300" height="300" [border]="2">
+</div>
+
+
+
+
+<!-- <h2>NgIF with then and else block</h2>
+
+<div *ngIf="true; then TrueBlock else FalseBlock">
+
+</div>
+<ng-template #TrueBlock>
+    To Display when True
+</ng-template>
+<ng-template  #FalseBlock >
+     To display when false
+</ng-template> -->
+
+
+<h3>NgFor iteration</h3>
+<ul>
+    <li *ngFor="let item of items">{{ item }}</li>
+  </ul>
+
+  <div>
+    <span *ngFor="let property of collection">{{property }}</span>
+  </div>
+  
+
+  <div [ngSwitch]="status">
+    <div *ngSwitchCase="'active'">Status: Active</div>
+    <div *ngSwitchCase="'inactive'">Status: Inactive</div>
+    <div *ngSwitchCase="'pending'">Status: Pending</div>
+    <div *ngSwitchDefault>Status: Unknown</div>
+  </div>
+  

@@ -1,0 +1,35 @@
+<p>devform works!</p>
+
+<div class="grid " >
+    <div 
+    *ngFor="let item of employee"
+     class="grid1">
+    {{item.Text}}
+    <div *ngIf="item.dataType === 'date'" >
+        <dx-date-box id="space">
+        </dx-date-box>
+    </div>
+    <div *ngIf="item.dataType === 'String'">
+        <dx-text-box id="space" ></dx-text-box>
+    </div>
+        
+    
+    
+    <div *ngIf="item.dataType === 'selectbox'">
+        <dx-select-box id="space" 
+        [dataSource]="partycode" ></dx-select-box>
+    </div>
+
+    <div *ngIf="item.dataType === 'selectbox1'">
+        <dx-select-box id="space" 
+        [dataSource]="ServiceTax" ></dx-select-box>
+    </div>
+
+    <div *ngIf="item.dataType === 'selectbox3'">
+        <dx-select-box id="space" 
+        [dataSource]="branch" ></dx-select-box>
+    </div>
+    
+    </div>
+    
+    </div>

@@ -1,0 +1,25 @@
+<p>searchgrid works!</p>
+
+
+<!-- <div>
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Search">
+    <button (click)="onSearch()">Go</button>
+  </div>
+  <dx-data-grid [dataSource]="gridData">
+    <dxo-paging [pageSize]="10"></dxo-paging>
+    <dxi-column dataField="name" caption="Name"></dxi-column>
+    <dxi-column dataField="age" caption="Age"></dxi-column>
+  </dx-data-grid> -->
+
+
+  <dx-data-grid 
+  id="gridContainer"
+   [dataSource]="users"
+   [columnAutoWidth]="true"
+   [columns]="['id','name', 'username', 'email','address.street','address.city','address.zipcode', ]"
+   [showBorders]="true"
+
+   >
+ 
+
+   </dx-data-grid>

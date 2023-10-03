@@ -1,0 +1,33 @@
+/* .grid {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+
+    
+}
+.grid div{
+    margin-bottom: 10px;
+    margin-right: 5px;
+} */
+
+
+.grid{
+    display: grid;
+    /* justify-content: space-evenly; */
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 2px solid skyblue;
+    box-shadow: 4px 5px 5px gray;
+    padding: 10px;
+   
+    
+}
+#space{
+ margin-right: 30px;
+ /* width:25em */
+}
+.grid1{
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    justify-content: space-between;
+    padding-top: 20px;
+}

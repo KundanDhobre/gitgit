@@ -1,0 +1,94 @@
+
+
+
+
+<dx-tab-panel class="tabPanel" >
+
+
+    <dxi-item title="Employee" icon="floppy"  class="tabPanel1">
+        
+           
+            <h1>Welcome to our company</h1>
+
+
+            <table >
+                <tr >
+                  <th>id</th>
+                  <th>name</th>
+                  <th>username</th>
+                  <th>email</th>
+                </tr>
+              
+                <tr *ngFor="let item of users">
+                 <th>{{item.id}}</th>
+                 <th>{{item.name}}</th>
+                 <th>{{item.username}}</th>
+                 <th>{{item.email}}</th>
+                </tr>
+              
+               </table> 
+
+           
+        
+    </dxi-item>
+
+  
+    
+
+    <dxi-item title="form" icon="floppy"   [ngClass]="'tttttt'"    >
+        <div *dxTemplate   >
+            <dx-form
+                id="form"
+                [formData]="employeeData"
+            >
+                <dxi-item dataField="name">
+                    <dxo-label template="name"></dxo-label>
+                </dxi-item>
+                <dxi-item dataField="position">
+                    <dxo-label template="position"></dxo-label>
+                </dxi-item>
+                <dxi-item dataField="hireDate"></dxi-item>
+                <dxi-item dataField="officeNumber">
+                    <dxo-label template="officeNumber"></dxo-label>
+                </dxi-item>
+                <ng-container *ngFor="let label of labelTemplates">
+                    <div *dxTemplate="let data of label.name">
+                        <div><i class="dx-icon {{ label.icon }}"></i>{{ data.text }}</div>
+                    </div>
+                </ng-container>
+            </dx-form>
+        </div>
+    </dxi-item>
+    <dxi-item title="Notes" icon="comment" >
+        <div *dxTemplate>
+            <dx-text-area
+                [(value)]="employeeData.notes">
+            </dx-text-area>
+        </div>
+    </dxi-item>
+    <dxi-item title="Role" icon="isnotblank" badge="new">
+        <div *dxTemplate>
+            <dx-radio-group
+                [items]="employeeData.roles"
+                [(value)]="employeeData.roles[0]">
+            </dx-radio-group>
+        </div>
+    </dxi-item>
+
+
+    [loop]="true"
+    [animationEnabled]="true"
+    [swipeEnabled]="true"
+    [(selectedIndex)]="selectedTabIndex">   
+
+
+</dx-tab-panel>
+
+<!-- <dx-radio-group
+    [items]="tabNames"
+    [value]="tabNames[selectedTabIndex]"
+    layout="horizontal"
+    (onValueChanged)="onValueChanged($event)">
+</dx-radio-group> -->
+
+<router-outlet></router-outlet>
